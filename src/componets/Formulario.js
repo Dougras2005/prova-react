@@ -4,10 +4,11 @@ const Formulario = ({ adicionarLivro }) => {
     const [texto, setTexto] = useState('');
     const [descricao, setDescricao] = useState('');
     const [imagen, setImagen] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!texto.trim()) return;
-        adicionarLivro(texto);
+        adicionarLivro({'texto': texto, 'descricao': descricao, 'imagem': imagen});
         setTexto('');
         setDescricao('');
         setImagen('');
@@ -17,11 +18,11 @@ const Formulario = ({ adicionarLivro }) => {
             <input
                 type="text"
                 className="form-control"
-                placeholder="Novo livro"
+                placeholder="informe o titulo"
                 value={texto}
                 onChange={(e) => setTexto(e.target.value)}
             />
-             <input
+             <textarea
                 type="text"
                 className="form-control"
                 placeholder="Descrição"

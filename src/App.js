@@ -16,8 +16,8 @@ const App = () => {
  
   const [editandoId, setEditandoId] = useState(null);
 
-  const adicionarLivro = (texto) => {
-    const novoLivro = {id: Date.now(), texto};
+  const adicionarLivro = (livro) => {
+    const novoLivro = {id: Date.now(), livro};
     setLivros([...livros, novoLivro]);
   };
 
